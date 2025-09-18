@@ -15,6 +15,7 @@ import Footer from "./pages/homepage/Footer";
 import LeadershipPage from "./pages/who-we-are/LeadershipPage";
 import About from "./pages/who-we-are/About";
 import CaseStudiesPage from "./pages/who-we-are/CaseStudies";
+import DiversityPage from "./pages/who-we-are/Diversity";
 
 // Service detail pages
 import Consultancy from "./pages/services/Consultancy";
@@ -69,6 +70,7 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/leadership" element={<LeadershipPage />} />
             <Route path="/case-studies" element={<CaseStudiesPage />} />
+            <Route path="/diversity" element={<DiversityPage />} />
 
         </Routes>
       </main>
