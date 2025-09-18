@@ -2,6 +2,10 @@ import "./index.css";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
+// Background
+import BackgroundFX from "./components/BackgroundFX";
+
+// HomePage
 import Navbar from "./components/Navbar";
 import Hero from "./pages/homepage/Hero"
 import Stats from "./pages/homepage/Stats";
@@ -58,6 +62,7 @@ function Home() {
 export default function App() {
   return (
     <Router>
+      <BackgroundFX />
       <Navbar />
       <ScrollManager />
       <main id="main">

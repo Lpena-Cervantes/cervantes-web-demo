@@ -387,6 +387,57 @@ ul.disc li{ list-style:disc; margin:6px 0; }
   .dv-heroish-art{order:2}
 }
 
+/* ===== Global animated background ===== */
+/* ===== Global background container ===== */
+.site-bg{
+  position: fixed;
+  inset: 0;
+  z-index: -1;             /* behind everything */
+  pointer-events: none;    /* never block clicks */
+  overflow: hidden;
+}
+
+/* ===== Particle field ===== */
+.bg-particle{
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,122,0,.75);       /* uses brand accent tone */
+  filter: blur(1px);
+  box-shadow:
+    0 0 6px rgba(255,122,0,.35),
+    0 0 14px rgba(255,122,0,.15);
+}
+.bg-particle.bright{
+  background: rgba(255,166,0,.9);
+  box-shadow:
+    0 0 8px rgba(255,166,0,.55),
+    0 0 18px rgba(255,166,0,.25);
+}
+
+/* Subtle corner glows for depth */
+.bg-glow{
+  position: absolute;
+  width: 48vmax; height: 48vmax;
+  filter: blur(80px);
+  opacity: .18;
+  background: radial-gradient(circle at 50% 50%, rgba(255,122,0,.35), transparent 65%);
+}
+.bg-glow.tl{ top: -20vmax; left: -18vmax; }
+.bg-glow.br{ bottom: -22vmax; right: -20vmax; opacity: .14; }
+
+/* Very soft vignette to calm edges */
+.bg-vignette{
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(1200px 800px at 50% 40%, transparent 65%, rgba(0,0,0,.25) 100%);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .bg-particle { display: none; }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width:1024px){
   .dv-hero, .dv-feature{ grid-template-columns:1fr; }

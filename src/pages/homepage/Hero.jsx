@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section id="top" className="section" style={{ paddingTop: 96 }}>
+    <section id="top" className="section" style={{ paddingTop: 120, paddingBottom: 40 }}>
       <div className="container hero-grid">
         <div>
           <div className="badge" aria-label="Tagline">

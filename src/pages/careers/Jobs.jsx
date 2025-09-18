@@ -1,5 +1,5 @@
 import Section from "../../components/Section";
-import { Search, Globe2, Zap, ShieldCheck, Rocket, ExternalLink } from "lucide-react";
+import { Search, Globe2, Zap, ShieldCheck, Rocket } from "lucide-react";
 
 export default function Jobs() {
   return (
