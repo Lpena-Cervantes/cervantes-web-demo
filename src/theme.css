@@ -12,6 +12,9 @@
   --muted:#c6c7cb;
   --muted-2:#9a9ca1;
 
+  /* category nav - who we are */
+  --sticky-nav: 86px;
+
   /* Brand */
   --accent:#ff7a00;
   --accent-700:#d86300;
@@ -291,6 +294,33 @@ label{ display:block; margin-bottom:6px; color:#e6e6e8; font-size:.95rem; }
 .chip{ display:inline-flex; align-items:center; gap:.4rem; padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:#111; color:var(--text); font-size:.9rem; cursor:pointer; }
 .chip:hover{ border-color:var(--accent); color:var(--accent); }
 .leader-bio-text{ color:var(--muted); margin:8px 0 0; }
+
+/* ===== Case Studies page ===== */
+.study-layout{
+  display:grid;
+  grid-template-columns: 240px 1fr;
+  gap: 24px;
+}
+.study-side{
+  position: sticky; top: 86px;
+  align-self: start;
+}
+.study-nav{ list-style:none; margin:0; padding:0; display:grid; gap:10px; }
+.chip.block{ display:block; text-align:center; padding:10px 12px; }
+
+.study-content{ display:grid; gap:24px; }
+.study-section{ scroll-margin-top: calc(var(--sticky-nav) + 14px); }
+.study-title{ margin:2px 0 8px; }
+.study-block + .study-block{ margin-top:10px; }
+.study-sub{ font-size:1.02rem; margin:8px 0 4px; }
+.study-text{ color:var(--muted); margin:0 0 8px; }
+.study-cta{ margin-top:10px; }
+
+/* Small screens */
+@media (max-width: 900px){
+  .study-layout{ grid-template-columns: 1fr; }
+  .study-side{ position: static; }
+}
 
 /* ---------- Responsive tweaks ---------- */
 @media (max-width:980px){
