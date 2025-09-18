@@ -1,6 +1,6 @@
 // src/components/Cybersecurity.jsx
-import Section from "./Section";
-import useReveal from "../hooks/useReveal";
+import Section from "../../components/Section";
+import useReveal from "../../hooks/useReveal";
 
 // no hero image for now
 const heroImg = null;

@@ -3,23 +3,23 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import { useEffect } from "react";
 
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Stats from "./components/Stats";
-import Services from "./components/Services";
-import Leadership from "./components/Leadership";
-import Locations from "./components/Locations";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Hero from "./pages/homepage/Hero"
+import Stats from "./pages/homepage/Stats";
+import Services from "./pages/homepage/Services";
+import Leadership from "./pages/homepage/Leadership";
+import Locations from "./pages/homepage/Locations";
+import Contact from "./pages/homepage/Contact";
+import Footer from "./pages/homepage/Footer";
 
 // Who Are We Pages
-import LeadershipPage from "./components/LeadershipPage";
-import About from "./components/About";
+import LeadershipPage from "./pages/who-we-are/LeadershipPage";
+import About from "./pages/who-we-are/About";
 
 // Service detail pages
-import Consultancy from "./components/Consultancy";
-import ManagedServices from "./components/ManagedServices";
-import Cybersecurity from "./components/Cybersecurity";
-import ApplicationOutsourcing from "./components/ApplicationOutsourcing";
+import Consultancy from "./pages/services/Consultancy";
+import ManagedServices from "./pages/services/ManagedServices";
+import Cybersecurity from "./pages/services/Cybersecurity";
+import ApplicationOutsourcing from "./pages/services/ApplicationOutsourcing";
 
 /** Smoothly handle hash links and scroll to top on route change */
 function ScrollManager() {

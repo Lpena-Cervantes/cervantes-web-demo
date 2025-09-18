@@ -1,4 +1,4 @@
-import Section from "./Section";
+import Section from "../../components/Section";
 
 const offices = [
   { city:"Boston, MA", lines:["1 Lincoln St.","Suite 2400","Boston, MA 02111"], map:"https://maps.app.goo.gl/tvmdwEmTh3RPUCKi9" },

@@ -1,9 +1,9 @@
 import { useState, useRef, useLayoutEffect, useEffect } from "react";
-import Section from "./Section";
+import Section from "../../components/Section";
 import { FaLinkedin } from "react-icons/fa6";
 
-import joanna from "../assets/joanna.jpg";
-import tim from "../assets/tim.jpg";
+import joanna from "../../assets/owner/joanna.jpg";
+import tim from "../../assets/owner/tim.jpg";
 
 /** Flip card that resizes to the active side */
 function OwnerCard({ img, name, role, summary, highlights = [], linkedin }) {

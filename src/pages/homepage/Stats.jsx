@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import Section from "./Section";
+import Section from "../../components/Section";
 
 function useCountTo(target, inView){
   const [n, setN] = useState(0);

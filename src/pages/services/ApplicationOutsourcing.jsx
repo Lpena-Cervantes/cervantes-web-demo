@@ -1,50 +1,51 @@
-// src/components/ManagedServices.jsx
-import Section from "./Section";
-import useReveal from "../hooks/useReveal";
+// src/components/ApplicationOutsourcing.jsx
+import Section from "../../components/Section";
+import useReveal from "../../hooks/useReveal";
 
 // no hero image for now
 const heroImg = null;
 
-const expertise = [
-  "IT Infrastructure Management",
-  "Helpdesk & End-User Support",
-  "Cloud Services & Management",
-  "IT Security Management",
-  "BCDR & Planning",
+const specialties = [
+  "Application & Data Architecture",
+  "Data Governance & Quality",
+  "Data Warehousing",
+  "QA & Software Testing",
+  "BI & Cloud Computing",
+  "Enterprise Analytics & Reporting",
+  "Business Process Improvement",
+  "ERP & CRM Management",
+  "eB/e-Commerce",
 ];
 
-export default function ManagedServices() {
+export default function ApplicationOutsourcing() {
   const heroRef = useReveal();
   const valueRef = useReveal();
-  const gridRef = useReveal();
-  const ctaRef = useReveal();
+  const gridRef  = useReveal();
+  const ctaRef   = useReveal();
 
   return (
     <>
       {/* HERO */}
       <header className="section" ref={heroRef} style={{ paddingTop: 48 }}>
         <div className="container">
-          <div
-            className="grid"
-            style={{ gridTemplateColumns: "1.1fr 1fr", alignItems: "center" }}
-          >
+          <div className="grid" style={{ gridTemplateColumns: "1.1fr 1fr", alignItems: "center" }}>
             <div>
               <div className="hero-kicker">
                 <span className="badge">Services</span>
                 <span style={{ margin: "0 .5rem" }}>•</span>
-                <span className="badge">Managed Services</span>
+                <span className="badge">Application Outsourcing</span>
               </div>
 
               <h1 style={{ marginTop: 12 }}>
-                Run stable, secure, and cost-efficient operations.
+                Build, modernize, and run applications—end to end.
               </h1>
               <p className="lead">
-                We manage and continually improve your IT landscape — infra, cloud,
-                endpoints, and service desk — so your teams can focus on the business.
+                We design, develop, integrate, and operate apps—from web and mobile to data platforms—
+                aligning capabilities with your business goals at predictable cost.
               </p>
 
               <div className="hero-actions">
-                <a className="btn" href="/#contact">Start a conversation</a>
+                <a className="btn" href="/#contact">Start a project</a>
                 <a className="btn ghost" href="/#services">Back to services</a>
               </div>
             </div>
@@ -58,11 +59,11 @@ export default function ManagedServices() {
                 />
               ) : (
                 <div style={{ padding: 24 }}>
-                  <h3>Operate & improve</h3>
+                  <h3>Design • Build • Integrate • Operate</h3>
                   <p className="lead" style={{ marginTop: 8 }}>
-                    Monitor → Support → Patch → Backup → Secure → Report.
+                    Legacy → Modern → Cloud. Clear SLAs. Predictable costs.
                   </p>
-                  <p className="lead">SLAs, automation, and continuous improvement.</p>
+                  <p className="lead">Business outcomes in sync with app capabilities.</p>
                 </div>
               )}
             </div>
@@ -76,29 +77,30 @@ export default function ManagedServices() {
           <div className="card" style={{ padding: 24 }}>
             <h2>Why partner with us</h2>
             <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(260px,1fr))" }}>
-              <Value item="Comprehensive IT support from infra to end-users" />
-              <Value item="Scales up or down with your business" />
-              <Value item="Cost-efficient operations with automation & clear SLAs" />
-              <Value item="Security baked into every layer and workflow" />
+              <Value item="Full-stack delivery: web, mobile, data, and integrations" />
+              <Value item="Legacy modernization and middleware/portal integration" />
+              <Value item="SLA-driven engagement with fixed & predictable costs" />
+              <Value item="Quality built-in: QA, automation, and CI/CD practices" />
             </div>
           </div>
         </div>
       </Section>
 
-      {/* OVERVIEW + QUICK FACTS */}
+      {/* OVERVIEW + STATS */}
       <Section>
         <div className="container">
           <div className="grid" style={{ gridTemplateColumns: "1.05fr 1fr", gap: 28 }}>
             <div className="card" style={{ padding: 24 }}>
-              <h2>Managed Services</h2>
+              <h2>Application Outsourcing</h2>
               <p>
-                Complexity keeps rising while teams are stretched thin. We become your
-                operational backbone — proactively managing your environment and
-                anticipating issues before they impact the business.
+                We bring the engineering depth to build and integrate applications—plus the
+                process expertise to align them with your operating model. Our contracts define
+                support and performance parameters up front, so you get consistent service levels
+                and measurable outcomes.
               </p>
               <p>
-                With our integrated approach, your estate isn’t just maintained — it’s
-                continually optimized to improve reliability, security, and cost.
+                From new builds and cloud migrations to portals, middleware, and data platforms,
+                we deliver and operate solutions that scale with your roadmap.
               </p>
               <div className="hero-actions">
                 <a className="btn" href="/#contact">Let’s talk</a>
@@ -107,25 +109,25 @@ export default function ManagedServices() {
             </div>
 
             <div className="stat-grid">
-              <div className="stat"><h3>24×7</h3><p>Monitoring & support</p></div>
-              <div className="stat"><h3>SLA</h3><p>Clear response & resolution</p></div>
-              <div className="stat"><h3>ISO-style</h3><p>Ops playbooks & runbooks</p></div>
-              <div className="stat"><h3>Security</h3><p>By design & default</p></div>
+              <div className="stat"><h3>SLA</h3><p>Clear uptime & response</p></div>
+              <div className="stat"><h3>Agile</h3><p>Iterative delivery</p></div>
+              <div className="stat"><h3>DevOps</h3><p>CI/CD & automation</p></div>
+              <div className="stat"><h3>Cloud</h3><p>Modern architectures</p></div>
             </div>
           </div>
         </div>
       </Section>
 
-      {/* EXPERTISE GRID */}
+      {/* SPECIALTIES GRID */}
       <Section refProp={gridRef}>
         <div className="container">
-          <h2>Areas of expertise</h2>
+          <h2>Specialization</h2>
           <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(240px,1fr))" }}>
-            {expertise.map((e) => (
-              <div key={e} className="card" style={{ padding: "18px 18px" }}>
-                <h3 style={{ margin: 0, fontSize: "1.05rem" }}>{e}</h3>
+            {specialties.map((s) => (
+              <div key={s} className="card" style={{ padding: "18px 18px" }}>
+                <h3 style={{ margin: 0, fontSize: "1.05rem" }}>{s}</h3>
                 <p className="lead" style={{ margin: "6px 0 0" }}>
-                  Delivered with proactive monitoring, automation, and reporting.
+                  Delivered via assessments, roadmaps, and managed execution.
                 </p>
               </div>
             ))}
@@ -141,9 +143,9 @@ export default function ManagedServices() {
             gridTemplateColumns: "1fr auto"
           }}>
             <div>
-              <h2 style={{ margin: 0 }}>Need reliable day-to-day operations?</h2>
+              <h2 style={{ margin: 0 }}>Ready to accelerate your app roadmap?</h2>
               <p className="lead" style={{ marginTop: 6 }}>
-                We’ll tailor a managed services plan around your stack and SLAs.
+                Tell us your goals—most inquiries get a same-day response.
               </p>
             </div>
             <a className="btn" href="/#contact">Talk to an expert</a>

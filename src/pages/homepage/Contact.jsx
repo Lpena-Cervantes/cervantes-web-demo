@@ -1,4 +1,4 @@
-import Section from "./Section";
+import Section from "../../components/Section";
 import { useForm } from "react-hook-form";
 
 export default function Contact(){

@@ -1,12 +1,12 @@
 import { useState } from "react";
-import Section from "./Section";
+import Section from "../../components/Section";
 import { FaLinkedin } from "react-icons/fa6";
 
 // images you already have
-import joanna from "../assets/joanna.jpg";
-import tim from "../assets/tim.jpg";
-import will from "../assets/will.png";
-import ashley from "../assets/ashley.jpg";
+import joanna from "../../assets/owner/joanna.jpg";
+import tim from "../../assets/owner/tim.jpg";
+import will from "../../assets/team-members/will.png";
+import ashley from "../../assets/team-members/ashley.jpg";
 
 const leaders = [
   {
