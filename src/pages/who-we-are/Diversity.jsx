@@ -2,7 +2,7 @@
 import Section from "../../components/Section";
 import diversity from "../../components/Who-we-are-data/diversity";
 // if you already use lucide-react or similar, great; otherwise swap the spans for plain text
-import { HeartHandshake, Scale, Users2, ShieldCheck, Quote } from "lucide-react";
+import { HeartHandshake, Scale, Users2, Quote } from "lucide-react";
 
 export default function DiversityPage() {
   const { hero, values, culture, testimonials } = diversity;

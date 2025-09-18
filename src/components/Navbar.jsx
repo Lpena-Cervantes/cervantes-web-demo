@@ -41,6 +41,7 @@ export default function Navbar() {
 
           <div style={{display:"flex", alignItems:"center", gap:18}}>
             <Link to="/#services" className="badge">Services</Link>
+            <Link to="careers/jobs" className="badge">PANZAJobs</Link>
 
             {/* Who we are dropdown */}
             <div
@@ -66,10 +67,10 @@ export default function Navbar() {
                 ref={menuRef}
                 className={`nav-dropdown-menu ${open ? "is-open" : ""}`}
                 role="menu"
-              >
+              > 
                 <Link to="/about" role="menuitem" tabIndex={open ? 0 : -1}>About Us</Link>
                 <Link to="/leadership" role="menuitem" tabIndex={open ? 0 : -1}>Leadership</Link>
-                <Link to="/news" role="menuitem" tabIndex={open ? 0 : -1}>News</Link>
+                {/* <Link to="/news" role="menuitem" tabIndex={open ? 0 : -1}>News</Link> */}
                 <Link to="/case-studies" role="menuitem" tabIndex={open ? 0 : -1}>Case Studies</Link>
                 <Link to="/diversity" role="menuitem" tabIndex={open ? 0 : -1}>Diversity</Link>
               </div>

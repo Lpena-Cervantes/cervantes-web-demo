@@ -1,24 +1,34 @@
 import Section from "../../components/Section";
 import { motion } from "framer-motion";
+import {
+  Building2,
+  Users2,
+  Sparkles,
+  Globe2,
+  Award,
+} from "lucide-react";
 
 const facts = [
-  { label: "Founded", value: "2004" },
-  { label: "Employees", value: "50+" },
-  { label: "Strengths", value: "Fast • Professional • Efficient" },
+  { label: "Founded", value: "2004", icon: Building2 },
+  { label: "Employees", value: "50+", icon: Users2 },
+  { label: "Strengths", value: "Fast • Professional • Efficient", icon: Sparkles },
   {
     label: "Locations",
     value:
       "Boston, MA • Chicago, IL • San Juan, PR • Madrid, Spain • Querétaro, Mexico",
+    icon: Globe2,
   },
   {
     label: "Awards",
     value:
       "Zenit 2011 • Inc 500/5000 • Fastest Growing Companies 2011 & 2020 • Top 40 under 40 • Spirit of Marquette • Excellence in Quality of Service 2015",
+    icon: Award,
   },
   {
     label: "Certifications",
     value:
       "WBENC (Woman-owned) • Minority Supplier Development Council (Intl.)",
+    icon: Award,
   },
 ];
 
@@ -53,14 +63,11 @@ const testimonials = [
 export default function About() {
   return (
     <>
-      {/* Header */}
-      <section className="section" style={{ paddingTop: 96 }}>
-        <div
-          className="container hero-grid"
-          style={{ gridTemplateColumns: "1.25fr .75fr" }}
-        >
+      {/* ===== Hero ===== */}
+      <section className="section about-hero">
+        <div className="container about-hero-grid">
           <div>
-            <div className="badge" aria-hidden="true">Who we are</div>
+            <span className="badge">Who we are</span>
             <h1>About The Cervantes Group</h1>
             <p className="about-lead">
               We deliver strategy, engineering, and managed services that help
@@ -70,26 +77,24 @@ export default function About() {
             </p>
           </div>
 
-          <motion.div
+          <motion.aside
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, ease: "easeOut" }}
-            className="hero-highlight"
+            className="about-hero-note card"
             aria-hidden="true"
           >
-            <p style={{ margin: 0 }}>
-              <strong>Our mission:</strong> anticipate change, pinpoint client
-              needs, and let customers focus on their core business while we
-              handle delivery.
-            </p>
-          </motion.div>
+            <strong>Our mission:</strong> anticipate change, pinpoint client
+            needs, and let customers focus on their core business while we handle
+            delivery.
+          </motion.aside>
         </div>
       </section>
 
-      {/* Story */}
-      <Section>
-        <div className="grid" style={{ gridTemplateColumns: "1.05fr .95fr" }}>
-          <article className="card round" style={{ padding: 18 }}>
+      {/* ===== Story ===== */}
+      <Section className="about-story">
+        <div className="container grid-2">
+          <article className="card">
             <h3>Our story</h3>
             <p>
               Clients choose The Cervantes Group for our blend of experience,
@@ -103,9 +108,9 @@ export default function About() {
             </p>
           </article>
 
-          <article className="card round" style={{ padding: 18 }}>
-            <h3 className="hidden">How we deliver</h3>
-            <p style={{ color: "var(--muted)", margin: 0 }}>
+          <article className="card muted">
+            <h3 className="sr-only">How we deliver</h3>
+            <p>
               Multilingual delivery across time zones. Enterprise standards.
               Startup speed.
             </p>
@@ -113,56 +118,67 @@ export default function About() {
         </div>
       </Section>
 
-      {/* Values */}
-      <Section>
-        <h2>What we believe</h2>
-        <div className="grid" style={{ gridTemplateColumns: "repeat(2,1fr)" }}>
-          <div className="card round" style={{ padding: 18 }}>
-            <span className="badge">Core values</span>
-            <h3>Integrity & excellence</h3>
-            <p className="about-lead" style={{ marginBottom: 0 }}>
-              Integrity, expertise, continuous learning, collaboration, and
-              excellence guide every engagement.
-            </p>
-          </div>
-          <div className="card round" style={{ padding: 18 }}>
-            <span className="badge">Philosophy</span>
-            <h3>Grow people, grow impact</h3>
-            <p className="about-lead" style={{ marginBottom: 0 }}>
-              We invest in people—celebrating differences, encouraging growth,
-              and balancing hard work with having fun.
-            </p>
-          </div>
-        </div>
-      </Section>
-
-      {/* Fast facts */}
-      <Section>
-        <h2>Fast facts</h2>
-        <div className="fact-grid">
-          {facts.map((f) => (
-            <div key={f.label} className="fact-tile">
-              <div className="fact-value">{f.value}</div>
-              <div className="fact-label">{f.label}</div>
+      {/* ===== Values ===== */}
+      <Section className="about-values">
+        <div className="container">
+          <h2>What we believe</h2>
+          <div className="grid-2">
+            <div className="card">
+              <span className="badge">Core values</span>
+              <h3>Integrity &amp; excellence</h3>
+              <p className="about-lead m-0">
+                Integrity, expertise, continuous learning, collaboration, and
+                excellence guide every engagement.
+              </p>
             </div>
-          ))}
+            <div className="card">
+              <span className="badge">Philosophy</span>
+              <h3>Grow people, grow impact</h3>
+              <p className="about-lead m-0">
+                We invest in people—celebrating differences, encouraging growth,
+                and balancing hard work with having fun.
+              </p>
+            </div>
+          </div>
         </div>
       </Section>
 
-      {/* Testimonials */}
-      <Section>
-        <h2>What partners say</h2>
-        <div className="quote-grid">
-          {testimonials.map((t, i) => (
-            <figure key={i} className="quote card round">
-              <blockquote className="quote-text">“{t.quote}”</blockquote>
-              <figcaption className="quote-footer">
-                <strong style={{ color: "var(--text)" }}>{t.author}</strong>
-                <br />
-                <small>{t.role}</small>
-              </figcaption>
-            </figure>
-          ))}
+      {/* ===== Fast facts ===== */}
+      <Section className="about-facts">
+        <div className="container">
+          <h2>Fast facts</h2>
+          <div className="fact-grid">
+            {facts.map(({ label, value, icon: Icon }) => (
+              <div key={label} className="fact-tile card">
+                <div className="fact-icon" aria-hidden>
+                  <Icon size={18} />
+                </div>
+                <div className="fact-content">
+                  <div className="fact-value">{value}</div>
+                  <div className="fact-label">{label}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* ===== Testimonials ===== */}
+      <Section className="about-testimonials">
+        <div className="container">
+          <h2>What partners say</h2>
+          <div className="quote-grid">
+            {testimonials.map((t, i) => (
+              <figure key={i} className="quote card">
+                <blockquote className="quote-text">“{t.quote}”</blockquote>
+                <figcaption className="quote-footer">
+                  <strong>{t.author}</strong>
+                  <br />
+                  <small className="muted">{t.role}</small>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </Section>
     </>

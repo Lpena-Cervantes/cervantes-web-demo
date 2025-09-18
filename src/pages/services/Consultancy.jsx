@@ -1,6 +1,5 @@
 import Section from "../../components/Section";
 import useReveal from "../../hooks/useReveal";
-import { Link } from "react-router-dom";
 // If you have a hero image, import it. Otherwise leave null.
 const heroImg = null;
 

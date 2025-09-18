@@ -23,6 +23,9 @@ import ManagedServices from "./pages/services/ManagedServices";
 import Cybersecurity from "./pages/services/Cybersecurity";
 import ApplicationOutsourcing from "./pages/services/ApplicationOutsourcing";
 
+// PANZAJobs
+import Jobs from "./pages/careers/Jobs";
+
 /** Smoothly handle hash links and scroll to top on route change */
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -71,6 +74,9 @@ export default function App() {
             <Route path="/leadership" element={<LeadershipPage />} />
             <Route path="/case-studies" element={<CaseStudiesPage />} />
             <Route path="/diversity" element={<DiversityPage />} />
+
+          {/* PANZAJobs */}
+            <Route path="/careers/jobs" element={<Jobs />} />
 
         </Routes>
       </main>

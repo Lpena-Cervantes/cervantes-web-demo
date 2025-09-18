@@ -73,6 +73,7 @@ const leaders = [
 
 function Leader({ person }) {
   const [open, setOpen] = useState(false);
+  const bioId = `${person.name.replace(/\s+/g, "-").toLowerCase()}-bio`;
 
   return (
     <li className="leader-row">
@@ -83,6 +84,7 @@ function Leader({ person }) {
         width={120}
         height={120}
         loading="lazy"
+        sizes="(max-width: 700px) 84px, 120px"
       />
 
       <div className="leader-content">
@@ -107,7 +109,7 @@ function Leader({ person }) {
 
         <p className="leader-summary">{person.summary}</p>
 
-        {person.bullets?.length > 0 && (
+        {!!person.bullets?.length && (
           <ul className="leader-bullets">
             {person.bullets.map((b, i) => (
               <li key={i}>{b}</li>
@@ -120,11 +122,14 @@ function Leader({ person }) {
             <button
               className="chip"
               aria-expanded={open}
-              onClick={() => setOpen((v) => !v)}
+              aria-controls={bioId}
+              onClick={() => setOpen(v => !v)}
             >
               {open ? "Hide bio" : "Read bio"}
             </button>
-            {open && <p className="leader-bio-text">{person.bio}</p>}
+            <div id={bioId} className="leader-bio-panel">
+              <p className="leader-bio-text">{person.bio}</p>
+            </div>
           </div>
         )}
       </div>
@@ -140,7 +145,7 @@ export default function LeadershipPage() {
           <h1>Leadership</h1>
           <p className="about-lead" style={{ maxWidth: 720 }}>
             Our leadership team blends enterprise rigor with startup speed—spanning
-            delivery operations, finance & HR, and multi-market growth across the
+            delivery operations, finance &amp; HR, and multi-market growth across the
             U.S., Puerto Rico, and Spain.
           </p>
         </header>
