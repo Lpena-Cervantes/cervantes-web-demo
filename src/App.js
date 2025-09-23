@@ -1,7 +1,7 @@
 import "./index.css";
 import "./theme.css"; // <-- add this so the new theme actually loads
 
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 // Background
