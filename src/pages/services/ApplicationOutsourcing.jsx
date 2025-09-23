@@ -1,4 +1,3 @@
-// src/components/ApplicationOutsourcing.jsx
 import Section from "../../components/Section";
 import useReveal from "../../hooks/useReveal";
 
@@ -26,47 +25,45 @@ export default function ApplicationOutsourcing() {
   return (
     <>
       {/* HERO */}
-      <header className="section" ref={heroRef} style={{ paddingTop: 48 }}>
-        <div className="container">
-          <div className="grid" style={{ gridTemplateColumns: "1.1fr 1fr", alignItems: "center" }}>
-            <div>
-              <div className="hero-kicker">
-                <span className="badge">Services</span>
-                <span style={{ margin: "0 .5rem" }}>•</span>
-                <span className="badge">Application Outsourcing</span>
-              </div>
-
-              <h1 style={{ marginTop: 12 }}>
-                Build, modernize, and run applications—end to end.
-              </h1>
-              <p className="lead">
-                We design, develop, integrate, and operate apps—from web and mobile to data platforms—
-                aligning capabilities with your business goals at predictable cost.
-              </p>
-
-              <div className="hero-actions">
-                <a className="btn" href="/#contact">Start a project</a>
-                <a className="btn ghost" href="/#services">Back to services</a>
-              </div>
+      <header className="section services-hero" ref={heroRef}>
+        <div className="container two-col">
+          <div>
+            <div className="hero-kicker">
+              <span className="badge">Services</span>
+              <span style={{ margin: "0 .5rem" }}>•</span>
+              <span className="badge">Application Outsourcing</span>
             </div>
 
-            <div className="card round" aria-hidden="true" style={{ minHeight: 280 }}>
-              {heroImg ? (
-                <img
-                  src={heroImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 18 }}
-                />
-              ) : (
-                <div style={{ padding: 24 }}>
-                  <h3>Design • Build • Integrate • Operate</h3>
-                  <p className="lead" style={{ marginTop: 8 }}>
-                    Legacy → Modern → Cloud. Clear SLAs. Predictable costs.
-                  </p>
-                  <p className="lead">Business outcomes in sync with app capabilities.</p>
-                </div>
-              )}
+            <h1 style={{ marginTop: 12 }}>
+              Build, modernize, and run applications—end to end.
+            </h1>
+            <p className="lead">
+              We design, develop, integrate, and operate apps—from web and mobile to data platforms—
+              aligning capabilities with your business goals at predictable cost.
+            </p>
+
+            <div className="hero-actions">
+              <a className="btn" href="/#contact">Start a project</a>
+              <a className="btn ghost" href="/#services">Back to services</a>
             </div>
+          </div>
+
+          <div className="card round" aria-hidden="true" style={{ minHeight: 280 }}>
+            {heroImg ? (
+              <img
+                src={heroImg}
+                alt=""
+                style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 18 }}
+              />
+            ) : (
+              <div style={{ padding: 24 }}>
+                <h3>Design • Build • Integrate • Operate</h3>
+                <p className="lead" style={{ marginTop: 8 }}>
+                  Legacy → Modern → Cloud. Clear SLAs. Predictable costs.
+                </p>
+                <p className="lead">Business outcomes in sync with app capabilities.</p>
+              </div>
+            )}
           </div>
         </div>
       </header>
@@ -76,7 +73,7 @@ export default function ApplicationOutsourcing() {
         <div className="container">
           <div className="card" style={{ padding: 24 }}>
             <h2>Why partner with us</h2>
-            <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(260px,1fr))" }}>
+            <div className="value-grid">
               <Value item="Full-stack delivery: web, mobile, data, and integrations" />
               <Value item="Legacy modernization and middleware/portal integration" />
               <Value item="SLA-driven engagement with fixed & predictable costs" />
@@ -88,8 +85,8 @@ export default function ApplicationOutsourcing() {
 
       {/* OVERVIEW + STATS */}
       <Section>
-        <div className="container">
-          <div className="grid" style={{ gridTemplateColumns: "1.05fr 1fr", gap: 28 }}>
+        <div className="container services-overview">
+          <div className="overview-grid">
             <div className="card" style={{ padding: 24 }}>
               <h2>Application Outsourcing</h2>
               <p>
@@ -122,7 +119,7 @@ export default function ApplicationOutsourcing() {
       <Section refProp={gridRef}>
         <div className="container">
           <h2>Specialization</h2>
-          <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(240px,1fr))" }}>
+          <div className="expertise-grid">
             {specialties.map((s) => (
               <div key={s} className="card" style={{ padding: "18px 18px" }}>
                 <h3 style={{ margin: 0, fontSize: "1.05rem" }}>{s}</h3>
@@ -137,13 +134,10 @@ export default function ApplicationOutsourcing() {
 
       {/* CTA */}
       <Section refProp={ctaRef}>
-        <div className="container">
-          <div className="card" style={{
-            padding: 24, display: "grid", gap: 12, alignItems: "center",
-            gridTemplateColumns: "1fr auto"
-          }}>
+        <div className="container services-cta">
+          <div className="card cta-bar">
             <div>
-              <h2 style={{ margin: 0 }}>Ready to accelerate your app roadmap?</h2>
+              <h2 className="m-0">Ready to accelerate your app roadmap?</h2>
               <p className="lead" style={{ marginTop: 6 }}>
                 Tell us your goals—most inquiries get a same-day response.
               </p>

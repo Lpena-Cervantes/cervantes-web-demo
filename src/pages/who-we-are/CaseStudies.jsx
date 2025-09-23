@@ -21,7 +21,7 @@ export default function CaseStudiesPage() {
   }, []);
 
   return (
-    <Section id="case-studies">
+    <Section id="case-studies" noReveal>
       <div className="container">
         <header className="page-head">
           <h1>Case Studies</h1>

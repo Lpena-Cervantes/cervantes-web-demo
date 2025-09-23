@@ -1,4 +1,3 @@
-// src/components/Cybersecurity.jsx
 import Section from "../../components/Section";
 import useReveal from "../../hooks/useReveal";
 
@@ -22,50 +21,45 @@ export default function Cybersecurity() {
   return (
     <>
       {/* HERO */}
-      <header className="section" ref={heroRef} style={{ paddingTop: 48 }}>
-        <div className="container">
-          <div
-            className="grid"
-            style={{ gridTemplateColumns: "1.1fr 1fr", alignItems: "center" }}
-          >
-            <div>
-              <div className="hero-kicker">
-                <span className="badge">Services</span>
-                <span style={{ margin: "0 .5rem" }}>•</span>
-                <span className="badge">Cybersecurity</span>
-              </div>
-
-              <h1 style={{ marginTop: 12 }}>
-                Cybersecurity solutions that protect your digital frontiers.
-              </h1>
-              <p className="lead">
-                From risk assessments and secure architecture to SOC services and
-                incident response—we help you prevent, detect, and respond to threats.
-              </p>
-
-              <div className="hero-actions">
-                <a className="btn" href="/#contact">Start a conversation</a>
-                <a className="btn ghost" href="/#services">Back to services</a>
-              </div>
+      <header className="section services-hero" ref={heroRef}>
+        <div className="container two-col">
+          <div>
+            <div className="hero-kicker">
+              <span className="badge">Services</span>
+              <span style={{ margin: "0 .5rem" }}>•</span>
+              <span className="badge">Cybersecurity</span>
             </div>
 
-            <div className="card round" aria-hidden="true" style={{ minHeight: 280 }}>
-              {heroImg ? (
-                <img
-                  src={heroImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 18 }}
-                />
-              ) : (
-                <div style={{ padding: 24 }}>
-                  <h3>Prevent • Detect • Respond</h3>
-                  <p className="lead" style={{ marginTop: 8 }}>
-                    Assess → Harden → Monitor → Hunt → Contain → Recover.
-                  </p>
-                  <p className="lead">Aligned to your risks and regulations.</p>
-                </div>
-              )}
+            <h1 style={{ marginTop: 12 }}>
+              Cybersecurity solutions that protect your digital frontiers.
+            </h1>
+            <p className="lead">
+              From risk assessments and secure architecture to SOC services and
+              incident response—we help you prevent, detect, and respond to threats.
+            </p>
+
+            <div className="hero-actions">
+              <a className="btn" href="/#contact">Start a conversation</a>
+              <a className="btn ghost" href="/#services">Back to services</a>
             </div>
+          </div>
+
+          <div className="card round" aria-hidden="true" style={{ minHeight: 280 }}>
+            {heroImg ? (
+              <img
+                src={heroImg}
+                alt=""
+                style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 18 }}
+              />
+            ) : (
+              <div style={{ padding: 24 }}>
+                <h3>Prevent • Detect • Respond</h3>
+                <p className="lead" style={{ marginTop: 8 }}>
+                  Assess → Harden → Monitor → Hunt → Contain → Recover.
+                </p>
+                <p className="lead">Aligned to your risks and regulations.</p>
+              </div>
+            )}
           </div>
         </div>
       </header>
@@ -75,7 +69,7 @@ export default function Cybersecurity() {
         <div className="container">
           <div className="card" style={{ padding: 24 }}>
             <h2>Why partner with us</h2>
-            <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(260px,1fr))" }}>
+            <div className="value-grid">
               <Value item="Custom solutions tailored to your risk profile & industry" />
               <Value item="Proactive threat hunting & continuous monitoring" />
               <Value item="Compliance-ready frameworks (GDPR, HIPAA, PCI DSS, etc.)" />
@@ -87,8 +81,8 @@ export default function Cybersecurity() {
 
       {/* OVERVIEW + QUICK FACTS */}
       <Section>
-        <div className="container">
-          <div className="grid" style={{ gridTemplateColumns: "1.05fr 1fr", gap: 28 }}>
+        <div className="container services-overview">
+          <div className="overview-grid">
             <div className="card" style={{ padding: 24 }}>
               <h2>Cybersecurity</h2>
               <p>
@@ -121,7 +115,7 @@ export default function Cybersecurity() {
       <Section refProp={gridRef}>
         <div className="container">
           <h2>Areas of expertise</h2>
-          <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(240px,1fr))" }}>
+          <div className="expertise-grid">
             {expertise.map((e) => (
               <div key={e} className="card" style={{ padding: "18px 18px" }}>
                 <h3 style={{ margin: 0, fontSize: "1.05rem" }}>{e}</h3>
@@ -136,13 +130,10 @@ export default function Cybersecurity() {
 
       {/* CTA */}
       <Section refProp={ctaRef}>
-        <div className="container">
-          <div className="card" style={{
-            padding: 24, display: "grid", gap: 12, alignItems: "center",
-            gridTemplateColumns: "1fr auto"
-          }}>
+        <div className="container services-cta">
+          <div className="card cta-bar">
             <div>
-              <h2 style={{ margin: 0 }}>Ready to strengthen your security posture?</h2>
+              <h2 className="m-0">Ready to strengthen your security posture?</h2>
               <p className="lead" style={{ marginTop: 6 }}>
                 We’ll design a roadmap and run the program with you.
               </p>

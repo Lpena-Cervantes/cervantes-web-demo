@@ -8,7 +8,7 @@ export default function DiversityPage() {
   const { hero, values, culture, testimonials } = diversity;
 
   return (
-    <Section id="diversity" className="diversity">
+    <Section id="diversity" className="diversity" noReveal>
       <div className="container">
         {/* HERO */}
         <header className="dv-hero card">

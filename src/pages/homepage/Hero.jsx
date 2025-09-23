@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section id="top" className="section" style={{ paddingTop: 120, paddingBottom: 40 }}>
-      <div className="container hero-grid">
+    <section id="top" className="section">
+      <div className="container hero hero-grid">
         <div>
           <div className="badge" aria-label="Tagline">
             Tech Consulting • Software • Cybersecurity • Managed Services
           </div>
 
-          <h1>We build technology that moves your business forward.</h1>
+          <h1 className="hero-title">We build technology that moves your business forward.</h1>
 
           <p className="lead">
             Strategy, design, and engineering—delivered by a multilingual team
@@ -17,36 +17,20 @@ export default function Hero() {
             cybersecurity and managed services, we partner with you end-to-end.
           </p>
 
-          <div className="hero-actions" style={{ marginTop: 12 }}>
+          <div className="hero-actions">
             <a className="btn" href="#contact">Start a project</a>
             <a className="btn ghost" href="#services">Explore services</a>
           </div>
 
           <hr className="hr" />
 
-          <ul
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3,minmax(0,1fr))",
-              gap: 18,
-              padding: 0,
-              margin: 0,
-              listStyle: "none",
-            }}
-          >
-            <li className="card round center" style={{ padding: "14px 12px" }}>
-              <small>ISO-style delivery</small>
-            </li>
-            <li className="card round center" style={{ padding: "14px 12px" }}>
-              <small>Near-/On-shore teams</small>
-            </li>
-            <li className="card round center" style={{ padding: "14px 12px" }}>
-              <small>Security by design</small>
-            </li>
+          <ul className="kpi-grid">
+            <li className="card round center kpi"><small>ISO-style delivery</small></li>
+            <li className="card round center kpi"><small>Near-/On-shore teams</small></li>
+            <li className="card round center kpi"><small>Security by design</small></li>
           </ul>
         </div>
 
-        {/* compact highlight chip on the right (stacks below on mobile) */}
         <motion.div
           initial={{ scale: 0.98, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -54,8 +38,9 @@ export default function Hero() {
           className="hero-highlight"
           aria-hidden="true"
         >
-          <p style={{ margin: 0 }}>
-            <strong>Outcome-driven delivery.</strong> Discovery → Architecture → Design → Build → Operate. We integrate with your teams or run fully managed programs.
+          <p className="m-0">
+            <strong>Outcome-driven delivery.</strong> Discovery → Architecture → Design → Build → Operate.
+            We integrate with your teams or run fully managed programs.
           </p>
         </motion.div>
       </div>
