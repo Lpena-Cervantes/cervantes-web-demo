@@ -1,3 +1,4 @@
+// src/pages/who-we-are/CaseStudies.jsx
 import { useEffect } from "react";
 import Section from "../../components/Section";
 import studies from "../../components/Who-we-are-data/caseStudies";
@@ -10,15 +11,31 @@ const tabs = [
   { id: "pharmacy", label: "Health Care IT (HIT)" },
 ];
 
+function scrollToId(id) {
+  if (typeof document === "undefined") return;
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 export default function CaseStudiesPage() {
-  // optional: if there is a #hash in URL, smooth scroll to it on mount
+  // On mount: if URL has a hash (supports "#/something" or "#something"), scroll there
   useEffect(() => {
-    const hash = window.location.hash;
-    if (hash) {
-      const el = document.querySelector(hash);
-      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    if (typeof window === "undefined") return;
+    const raw = window.location.hash || "";
+    const id = decodeURIComponent(raw.replace(/^#\/?/, ""));
+    if (!id) return;
+    scrollToId(id);
   }, []);
+
+  const onNavClick = (e, id) => {
+    e.preventDefault();
+    scrollToId(id);
+    // use window.history (not the restricted global "history")
+    if (typeof window !== "undefined") {
+      window.history.replaceState(null, "", `#${id}`);
+      // alternative (also OK): window.location.hash = id;
+    }
+  };
 
   return (
     <Section id="case-studies" noReveal>
@@ -36,7 +53,11 @@ export default function CaseStudiesPage() {
             <ul className="study-nav">
               {tabs.map((t) => (
                 <li key={t.id}>
-                  <a className="chip block" href={`#${t.id}`}>
+                  <a
+                    className="chip block"
+                    href={`#${t.id}`}
+                    onClick={(e) => onNavClick(e, t.id)}
+                  >
                     {t.label}
                   </a>
                 </li>
@@ -49,6 +70,7 @@ export default function CaseStudiesPage() {
             {studies.map((s) => (
               <article key={s.id} id={s.id} className="study-section card">
                 <h2 className="study-title">{s.title}</h2>
+
                 {s.blocks.map(([sub, text], i) => (
                   <section key={i} className="study-block">
                     <h3 className="study-sub">{sub}</h3>
@@ -57,7 +79,20 @@ export default function CaseStudiesPage() {
                 ))}
 
                 <div className="study-cta">
-                  <a className="btn small ghost" href="#case-studies">Back to top</a>
+                  <a
+                    className="btn small ghost"
+                    href="#case-studies"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToId("case-studies");
+                      if (typeof window !== "undefined") {
+                        window.history.replaceState(null, "", "#case-studies");
+                        // or: window.location.hash = "case-studies";
+                      }
+                    }}
+                  >
+                    Back to top
+                  </a>
                 </div>
               </article>
             ))}
